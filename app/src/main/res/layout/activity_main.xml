@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.example.shixin_pc.framework.MainActivity">
+
+      <Button
+          android:id="@+id/btn_mvc"
+          android:text="mvc"
+          android:gravity="center"
+          android:textSize="20sp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+    <Button
+        android:text="mvp"
+        android:id="@+id/btn_mvp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/mvvm"
+        android:text="mvvm"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

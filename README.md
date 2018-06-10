@@ -1,2 +1,2 @@
 # AndroidFramework
-Android中mvc mvp mvvm的应用
+mvc mvp mvvm在Android中的应用

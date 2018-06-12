@@ -1,6 +1,4 @@
 # AndroidFramework
-<br></br>
-<br></br>
 <h3>1.MVC</h3>
 
 

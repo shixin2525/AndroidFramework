@@ -8,7 +8,6 @@ import android.widget.Button;
 
 import mvc.controllor.MvcActivity;
 import mvp.view.MvpActivity;
-import mvvm.MvvmActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -17,11 +16,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button mvcBtn=findViewById(R.id.btn_mvc);
-        Button mvpBtn=findViewById(R.id.btn_mvc);
-        Button mvvmBtn=findViewById(R.id.btn_mvc);
+        Button mvpBtn=findViewById(R.id.btn_mvp);
         mvcBtn.setOnClickListener(this);
         mvpBtn.setOnClickListener(this);
-        mvvmBtn.setOnClickListener(this);
     }
 
     @Override
@@ -33,9 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_mvp:
                 startActivity(new Intent(this, MvpActivity.class));
                 break;
-            case R.id.mvvm:
-                startActivity(new Intent(this, MvvmActivity.class));
-                break;
+
         }
     }
 }

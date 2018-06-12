@@ -6,10 +6,11 @@ import android.support.annotation.Nullable;
 import android.widget.TextView;
 
 import com.example.shixin_pc.framework.R;
-import com.lzy.okgo.callback.AbsCallback;
+import com.google.gson.Gson;
+import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
 
-import mvc.model.DataBean;
+import mvc.model.MyDataBean;
 import mvc.model.MvcModel;
 
 /**
@@ -20,17 +21,20 @@ public class MvcActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mvc_layout);
-        final TextView contentTv = findViewById(R.id.mvc_tv_content);
-        MvcModel.singleton().requestData(new AbsCallback<DataBean>() {
+        setContentView(R.layout.layout_mvc);
+        final TextView contentTv = findViewById(R.id.tv_mvc_content);
+        MvcModel.singleton().requestData(new StringCallback() {
             @Override
-            public void onSuccess(Response<DataBean> response) {
-                contentTv.setText("请求失败");
+            public void onSuccess(Response<String> response) {
+                Gson gson = new Gson();
+                MyDataBean myDataBean = gson.fromJson(response.body(), MyDataBean.class);
+                contentTv.setText("请求成功：" + myDataBean.getData().toString());
             }
 
             @Override
-            public DataBean convertResponse(okhttp3.Response response) throws Throwable {
-                return null;
+            public void onError(Response<String> response) {
+                super.onError(response);
+                contentTv.setText("请求失败!");
             }
         });
     }
